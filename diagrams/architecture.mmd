@@ -1,0 +1,18 @@
+graph TD
+    subgraph AWS["AWS Cloud"]
+        EB[EventBridge]
+        SNS[SNS Topic]
+        CW[CloudWatch]
+        VPC[VPC]
+        ECR[(ECR)]
+        CP[CodePipeline]
+        CB[CodeBuild]
+    end
+
+    S3 --> EB
+    EB --> SNS
+    SNS --> CW
+    CW --> VPC
+    VPC --> ECR
+    ECR --> CP
+    CP --> CB
