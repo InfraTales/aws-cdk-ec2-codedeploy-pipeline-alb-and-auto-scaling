@@ -1,0 +1,9 @@
+sequenceDiagram
+    User->>S3: Request
+    S3->>EB: Request
+    EB->>SNS: Request
+    SNS->>CW: Request
+    CW-->>SNS: Response
+    SNS-->>EB: Response
+    EB-->>S3: Response
+    S3-->>User: Response
